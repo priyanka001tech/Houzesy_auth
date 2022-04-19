@@ -8,6 +8,7 @@
   --form-bg: #fff;
   --reset: #366de4;
   --divi-text: rgb(112, 111, 111);
+  --auth-google:rgba(128, 128, 128, 0.466);
 }
 
 [data-theme='dark'] {
@@ -20,12 +21,15 @@
   --form-bg: #4383dd;
   --reset: #cfeff8;
   --divi-text: rgb(235, 230, 230);
+  --auth-google:rgba(252, 249, 249, 0.87);
 }
+
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 .nav{
@@ -35,7 +39,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; 
 }
 
 a {
@@ -100,8 +104,8 @@ h2 {
   width: 100%;
   text-align: center;
   border-bottom: 1px solid rgb(192, 191, 191);
-  line-height: .1rem;
-  margin: 2rem 0;
+  line-height: .2rem;
+  margin: 1.3rem 0;
 }
 .divi-text{
   color: var(--divi-text);
@@ -124,14 +128,15 @@ label {
 }
 
 input {
+  width:100%;
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 6px;
+  margin-top: 6px;
   border: 1px solid var(--border);
   background: white;
-  color: var(--text-primary);
+  color: black;
 }
-
 
 .remember {
   display: flex;
@@ -142,6 +147,68 @@ input {
 input[type=checkbox]:checked {
   margin: 0;
   padding: 0;
+}
+
+
+input[type="email"] {
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  background-color: #f5f5f5;
+  outline: 0;
+  padding: 0 10px;
+  font-size: 13px;
+  padding-left: 30px;
+  border: 0.5px solid var(--auth-google);
+}
+
+input[type="password"] {
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  background-color: #f5f5f5;
+  outline: 0;
+  padding: 0 10px;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 0.5px solid var(--auth-google);
+}
+
+.icon{
+  color: black;
+}
+
+.fa-eye-slash {
+  position: absolute;
+  right: 42%;
+  top: 41%;
+  font-size: 15px;
+  cursor: pointer;
+  
+}
+
+.fa-eye {
+  position: absolute;
+  right: 42%;
+  top: 41%;
+  font-size: 15px;
+  cursor: pointer
+} 
+.pass{
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  background-color: #f5f5f5;
+  outline: 0;
+  padding: 0 10px;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 0.5px solid var(--auth-google);
 }
 
 .remember p {
@@ -187,12 +254,11 @@ input[type=checkbox]:checked {
   display : none;
 }
 .img1{
-  width: 16%;
+  width: 14%;
   height: 14%;
   border-radius: 5px;
 }
 .img1:hover{
-  box-shadow: 0px 3px #040355e7;
   cursor: pointer;
 }
 .img2{
@@ -218,18 +284,19 @@ input[type=checkbox]:checked {
 }
 button {
   background-color: var(--accent);
-  border: 1px solid var(--accent);
   color: #fff;
   margin: 16px 0;
   padding: 10px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 2px 3px #c5c4c4e7;
+  
 }
-
+.button2{
+  border: 1px solid var(--accent);
+}
 button:hover{
-  background-color: var(--accent2);
+  box-shadow: 2px 3px #c5c4c48f;
 }
 
 .bottom {
@@ -237,6 +304,21 @@ button:hover{
   justify-content: space-between;
   width: 100%;
   font-size: .8rem;
+}
+
+.img1{
+  float: left;
+}
+
+.auth {
+  margin-top: 10px;
+  display : flex;
+  background: transparent;
+  border: 1px solid var(--auth-google);
+}
+.authtext{
+  margin-top: 2.9%;
+  color: var(--text-primary);
 }
 .reset{
   color: var(--reset);
@@ -252,5 +334,17 @@ button:hover{
   .login {
     width: 95%;
   }
+  .app{
+    height: 100%;
+  }
 }
-
+@media screen and (max-width:800px) {
+  .fa-eye-slash {
+    display: none;
+    
+  }
+  
+  .fa-eye {
+    display: none;
+  } 
+}
